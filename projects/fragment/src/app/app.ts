@@ -1,21 +1,10 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  imports: [RouterOutlet],
 })
-export class App {
-  counter: number = 0;
-
-  cdr = inject(ChangeDetectorRef);
-
-  increment() {
-    this.counter++;
-  }
-
-  incrementCDR() {
-    this.counter++;
-    this.cdr.detectChanges();
-  }
-}
+export class App {}

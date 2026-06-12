@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:host": "node dist/host/server/server.mjs"
+    "serve:ssr:host": "ng build host && node dist/host/server/server.mjs",
+    "serve:fragment": "ng build fragment && node post-build.js && npx serve -l 4201 -s ./dist/fragment/browser -u"
   },
   "prettier": {
     "printWidth": 100,

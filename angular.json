@@ -21,9 +21,7 @@
                 "input": "projects/host/public"
               }
             ],
-            "styles": [
-              "projects/host/src/styles.css"
-            ],
+            "styles": ["projects/host/src/styles.css"],
             "server": "projects/host/src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -44,12 +42,14 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "externalDependencies": ["htmlrewriter"]
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "externalDependencies": ["htmlrewriter"]
             }
           },
           "defaultConfiguration": "production"
@@ -79,9 +79,7 @@
                 "input": "projects/host/public"
               }
             ],
-            "styles": [
-              "projects/host/src/styles.css"
-            ]
+            "styles": ["projects/host/src/styles.css"]
           }
         }
       }
@@ -97,19 +95,16 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "projects/fragment/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/fragment/tsconfig.app.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/fragment/public"
+                "input": "projects/fragment/public",
+                "output": "wf-assets"
               }
             ],
-            "styles": [
-              "projects/fragment/src/styles.css"
-            ]
+            "styles": ["projects/fragment/src/styles.css"]
           },
           "configurations": {
             "production": {
@@ -125,7 +120,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "deployUrl": "/wf-assets/"
             },
             "development": {
               "optimization": false,
@@ -153,10 +149,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/fragment/tsconfig.spec.json",
             "assets": [
               {
@@ -164,9 +157,7 @@
                 "input": "projects/fragment/public"
               }
             ],
-            "styles": [
-              "projects/fragment/src/styles.css"
-            ]
+            "styles": ["projects/fragment/src/styles.css"]
           }
         }
       }

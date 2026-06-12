@@ -20,7 +20,7 @@ gateway.registerFragment({
   fragmentId: 'fragment',
   piercingClassNames: [],
   endpoint: 'http://localhost:4201',
-  routePatterns: ['/fragment/:_*', '/__wf/fragment/:_*'],
+  routePatterns: ['/fragment/:_*', '/wf-assets/:_*'],
   piercing: false,
 });
 
