@@ -1,5 +1,7 @@
 # How to reproduce the issue
 
+Reproducible Example for issue https://github.com/web-fragments/web-fragments/issues/272
+
 1. Install dependencies by running `npm install`
 2. Serve fragment by running `npm run serve:fragment`  
    Once completed, the web-fragment application should be running at http://localhost:4201/fragment
